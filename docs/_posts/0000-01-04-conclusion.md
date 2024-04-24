@@ -3,4 +3,6 @@ layout: slide
 title: "Conclusions"
 ---
 
-Hi there
+In this project, we train a simple binary classifier to identify if the sentence contains harmful language.
+
+
