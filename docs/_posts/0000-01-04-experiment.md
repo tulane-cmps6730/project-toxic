@@ -7,7 +7,7 @@ Dataset: PKU-SafeRLHF <span style="color: red;">(Warning: Contain Harmful Langua
 
 It is a preference dataset consisting of 330k+ expert comparison data.
 
-
+<img src="{{ site.baseurl }}/assets/img/Picture4.png" >
 
 
 
