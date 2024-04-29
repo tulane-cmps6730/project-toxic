@@ -9,3 +9,10 @@ scikit-learn>=0.20.1
 scipy>=1.1.0
 tensorflow>=2.0.0
 WTForms>=2.2.1
+datasets>=1.17.0
+torch>=1.4.0
+tqdm
+transformers
+accelerate
+peft>=0.3.0
+tyro>=0.5.7
