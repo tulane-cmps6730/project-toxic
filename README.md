@@ -8,6 +8,7 @@ Large language models (LLMs) have demonstrated remarkable proficiency in tasks l
 ### Methods
 We introduce a cost model to discriminate between safe and unsafe responses. We learn the model using the following pairwise comparison loss:
 
+![Example Image](/docs/assets/img/Picture3.png)
 
 It’s worth noting that in the cost model, a response $y$ that is more harmful to the same prompt $x$ will yield a higher cost value. For unsafe responses, the cost value is positive; otherwise, it is negative.
 
