@@ -1,6 +1,6 @@
-# CMPS 6730 Sample Project
+# CMPS 6730 Safety classification using LM
 
-This repository contains starter code for the final project in CMPS 4730/6730: Natural Language Processing at Tulane University.
+This repository contains the codes for the nlp project named Safety classification using LM.
 
 The code in this repository will be copied into your team's project repository at the start of class to provide a starting point for your project.
 
