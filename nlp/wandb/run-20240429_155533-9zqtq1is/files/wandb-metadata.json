@@ -1,0 +1,201 @@
+{
+    "os": "Linux-5.15.146.1-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "heartbeatAt": "2024-04-29T20:55:34.456038",
+    "startedAt": "2024-04-29T20:55:33.980730",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/zixuan/sample-project-main/nlp/../notebooks/cost_trainer.py",
+    "codePathLocal": null,
+    "host": "zixuan",
+    "username": "zixuan",
+    "executable": "/usr/bin/python3",
+    "cpu_count": 16,
+    "cpu_count_logical": 32,
+    "cpu_freq": {
+        "current": 2995.198999999998,
+        "min": 0.0,
+        "max": 0.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        },
+        {
+            "current": 2995.199,
+            "min": 0.0,
+            "max": 0.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1006.853931427002,
+            "used": 322.3364677429199
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 4090",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 4090",
+            "memory_total": 25757220864
+        }
+    ],
+    "memory": {
+        "total": 31.206993103027344
+    }
+}

@@ -5,17 +5,38 @@ import click
 import glob
 import pickle
 import sys
+import os
 
 import numpy as np
 import pandas as pd
 import re
 import requests
-from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.linear_model import LogisticRegression
-from sklearn.model_selection import StratifiedKFold
-from sklearn.metrics import accuracy_score, classification_report
+#from sklearn.feature_extraction.text import CountVectorizer
+#from sklearn.linear_model import LogisticRegression
+#from sklearn.model_selection import StratifiedKFold
+#from sklearn.metrics import accuracy_score, classification_report
 
-from . import clf_path, config
+#from . import clf_path, config
+
+from dataclasses import dataclass, field
+from typing import Any, Dict, List, Optional, Union
+
+import evaluate
+import numpy as np
+import torch
+import torch.nn as nn
+from datasets import load_dataset
+from peft import LoraConfig, TaskType, get_peft_model
+from transformers import (
+    AutoModelForSequenceClassification,
+    AutoTokenizer,
+    HfArgumentParser,
+    PreTrainedTokenizerBase,
+    Trainer,
+    TrainerCallback,
+    TrainingArguments,
+)
+from transformers.utils import PaddingStrategy
 
 @click.group()
 def main(args=None):
@@ -36,26 +57,24 @@ def dl_data():
     """
     Download training/testing data.
     """
-    data_url = config.get('data', 'url')
-    data_file = config.get('data', 'file')
-    print('downloading from %s to %s' % (data_url, data_file))
-    r = requests.get(data_url)
-    with open(data_file, 'wt') as f:
-        f.write(r.text)
-    
+    # Load the PKU-SafeRLHF dataset for tuning the reward model. 
+    print("Load the PKU-SafeRLHF dataset from huggingface.")
+    train_dataset = load_dataset("PKU-Alignment/PKU-SafeRLHF", split="train")
+    print("Finished loading")
 
-def data2df():
-    return pd.read_csv(config.get('data', 'file'))
+
+#def data2df():
+    #return pd.read_csv(config.get('data', 'file'))
 
 @main.command('stats')
 def stats():
     """
     Read the data files and print interesting statistics.
     """
-    df = data2df()
-    print('%d rows' % len(df))
-    print('label counts:')
-    print(df.partisan.value_counts())    
+    print("Load the PKU-SafeRLHF dataset from huggingface.")
+    train_dataset = load_dataset("PKU-Alignment/PKU-SafeRLHF", split="train")
+    print("The first 10 entries of the dataset:")
+    print(train_dataset[:10]) 
 
 @main.command('train')
 def train():
@@ -63,21 +82,9 @@ def train():
     Train a classifier and save it.
     """
     # (1) Read the data...
-    df = data2df()    
-    # (2) Create classifier and vectorizer.
-    clf = LogisticRegression(max_iter=1000, C=1, class_weight='balanced')         
-    vec = CountVectorizer(min_df=5, ngram_range=(1,3), binary=True, stop_words='english')
-    X = vec.fit_transform(df.title)
-    y = df.partisan.values
-    # (3) do cross-validation and print out validation metrics
-    # (classification_report)
-    do_cross_validation(clf, X, y)
-    # (4) Finally, train on ALL data one final time and
-    # train. Save the classifier to disk.
-    clf.fit(X, y)
-    pickle.dump((clf, vec), open(clf_path, 'wb'))
-    top_coef(clf, vec)
+    os.system("python3 ../notebooks/cost_trainer.py")
 
+'''
 def do_cross_validation(clf, X, y):
     all_preds = np.zeros(len(y))
     for train, test in StratifiedKFold(n_splits=5, shuffle=True, random_state=42).split(X,y):
@@ -93,6 +100,6 @@ def top_coef(clf, vec, labels=['liberal', 'conservative'], n=10):
     print('\n\ntop coef for %s' % labels[0])
     for i in np.argsort(clf.coef_[0])[:n]:
         print('%20s\t%.2f' % (feats[i], clf.coef_[0][i]))
-
+'''
 if __name__ == "__main__":
     sys.exit(main())
