@@ -22,11 +22,11 @@ https://github.com/tulane-cmps6730/project-alpha
 
 ### Contents
 
-- [docs](docs): template to create slides for project presentations
-- [nlp](nlp): Python project code
-- [notebooks](notebooks): Jupyter notebooks for project development and experimentation
-- [report](report): LaTeX report
-- [tests](tests): unit tests for project code
+- [docs](docs): contains the slides for presentation
+- [nlp](nlp): contains the demo for the web interface and command line interface
+- [notebooks](notebooks): The main codes for training the cost model
+- [report](report): report_final.pdf contains the final report
+- [tests](tests): unit tests for project code (I don't use this code)
 
 ### Background Resources
 
