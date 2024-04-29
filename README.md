@@ -7,12 +7,33 @@ Large language models (LLMs) have demonstrated remarkable proficiency in tasks l
 ### Contents
 
 - [docs](docs): contains the slides for presentation
-- [nlp](nlp): contains the demo for the web interface and command line interface
+- [nlp](nlp): contains the demo for the web interface and command line interface and all the images for the demo
 - [notebooks](notebooks): The main codes for training the cost model
 - [report](report): report_final.pdf contains the final report
 - [tests](tests): unit tests for project code (I don't use this code)
 
 
-### 
+### Installation
 
+Install the necessary dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+Notice that we need gpu to run all the experiments and tests.
+
+### Training
+
+First, we train a sft model to build the cost model. (This step is optional.)
+
+```
+python3 notebooks/sft_llama2.py
+```
+
+Next, we train the cost model:
+
+```
+python3 notebooks/cost_trainer.py
+```
 
